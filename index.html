@@ -1,658 +1,931 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Toptan Sandalye | Toptan Sandalye ve Masa Çözümleri</title>
-
-    <meta name="description" content="Cafe, restaurant, otel ve işletmeler için toptan sandalye ve masa çözümleri. Modern, dayanıklı ve şık modeller.">
-    <meta name="keywords" content="toptan sandalye, toptan masa, cafe sandalyesi, restaurant sandalyesi, toptan sandalye modelleri">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #171717;
-            background: #ffffff;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(1200px, calc(100% - 40px));
-            margin: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            height: 76px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #eeeeee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-inner {
-            width: min(1400px, calc(100% - 40px));
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 25px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .logo-icon {
-            width: 34px;
-            height: 34px;
-            background: #ff7100;
-            border-radius: 7px 7px 4px 4px;
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: "";
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            background: #ff7100;
-            bottom: -6px;
-            left: 7px;
-            box-shadow: 17px 0 0 #ff7100;
-        }
-
-        .logo span {
-            color: #ff7100;
-        }
-
-        .logo small {
-            display: block;
-            font-size: 8px;
-            letter-spacing: 2px;
-            color: #777;
-            margin-top: 2px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        nav a {
-            font-size: 14px;
-            font-weight: 600;
-            transition: .2s;
-        }
-
-        nav a:hover {
-            color: #ff7100;
-        }
-
-        .header-button {
-            background: #ff7100;
-            color: #fff;
-            padding: 13px 22px;
-            border-radius: 7px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 570px;
-            background:
-                linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.60) 42%, rgba(0,0,0,.18) 100%),
-                url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2000&q=85")
-                center/cover;
-            display: flex;
-            align-items: center;
-            color: #fff;
-        }
-
-        .hero-content {
-            width: min(1200px, calc(100% - 40px));
-            margin: auto;
-        }
-
-        .hero-content h1 {
-            max-width: 650px;
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.02;
-            letter-spacing: -3px;
-            margin-bottom: 22px;
-        }
-
-        .hero-content h1 span {
-            color: #ff7100;
-        }
-
-        .hero-content p {
-            max-width: 570px;
-            font-size: 19px;
-            line-height: 1.6;
-            color: #eeeeee;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 25px;
-            border-radius: 7px;
-            font-weight: 700;
-            font-size: 15px;
-            transition: .2s;
-        }
-
-        .btn-orange {
-            background: #ff7100;
-            color: white;
-        }
-
-        .btn-orange:hover {
-            background: #e86000;
-        }
-
-        .btn-outline {
-            border: 1px solid #fff;
-            color: #fff;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #111;
-        }
-
-        /* =========================
-           FEATURES
-        ========================= */
-
-        .features {
-            background: #fff;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .feature {
-            padding: 25px 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            border-right: 1px solid #eeeeee;
-        }
-
-        .feature:last-child {
-            border-right: 0;
-        }
-
-        .feature-icon {
-            font-size: 29px;
-        }
-
-        .feature strong {
-            display: block;
-            font-size: 14px;
-        }
-
-        .feature span {
-            display: block;
-            color: #777;
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 35px;
-        }
-
-        .section-title small {
-            color: #ff7100;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            letter-spacing: -1.5px;
-            margin-top: 6px;
-        }
-
-        .section-title p {
-            color: #777;
-            margin-top: 8px;
-        }
-
-        .view-all {
-            color: #ff7100;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .product {
-            background: #f7f7f7;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #eeeeee;
-            transition: .25s;
-        }
-
-        .product:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,.08);
-        }
-
-        .product-image {
-            height: 270px;
-            background: #f2f2f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            background: #fff;
-            padding: 18px;
-        }
-
-        .product-info h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
-
-        .product-info p {
-            color: #777;
-            font-size: 13px;
-        }
-
-        /* =========================
-           TABLES
-        ========================= */
-
-        .tables-section {
-            background: #f7f7f5;
-        }
-
-        /* =========================
-           CATALOG
-        ========================= */
-
-        .catalog {
-            padding: 80px 0;
-        }
-
-        .catalog-box {
-            min-height: 360px;
-            border-radius: 15px;
-            overflow: hidden;
-            background:
-                linear-gradient(90deg, rgba(246,231,215,.98) 0%, rgba(246,231,215,.90) 48%, rgba(246,231,215,.15) 100%),
-                url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85")
-                center/cover;
-            display: flex;
-            align-items: center;
-            padding: 60px;
-        }
-
-        .catalog-content {
-            max-width: 520px;
-        }
-
-        .catalog-content small {
-            color: #ff7100;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-        }
-
-        .catalog-content h2 {
-            font-size: 44px;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin: 12px 0 15px;
-        }
-
-        .catalog-content p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #11161a;
-            color: #fff;
-            padding-top: 60px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
-            padding-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 25px;
-            font-weight: 800;
-        }
-
-        .footer-logo span {
-            color: #ff7100;
-        }
-
-        .footer-description {
-            color: #aeb3b7;
-            max-width: 380px;
-            line-height: 1.6;
-            margin-top: 15px;
-        }
-
-        .footer h3 {
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .footer-links a {
-            color: #aeb3b7;
-            font-size: 13px;
-        }
-
-        .footer-links a:hover {
-            color: #ff7100;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #2b3034;
-            padding: 20px 0;
-            color: #777;
-            font-size: 12px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            nav {
-                display: none;
-            }
-
-            .header-button {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero {
-                min-height: 580px;
-            }
-
-            .hero-content h1 {
-                font-size: 48px;
-                letter-spacing: -2px;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .feature {
-                border-bottom: 1px solid #eeeeee;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .product-image {
-                height: 220px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .container {
-                width: calc(100% - 28px);
-            }
-
-            header {
-                height: 65px;
-            }
-
-            .header-inner {
-                width: calc(100% - 28px);
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .logo-icon {
-                width: 28px;
-                height: 28px;
-            }
-
-            .hero {
-                min-height: 540px;
-                background:
-                    linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.30)),
-                    url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80")
-                    center/cover;
-            }
-
-            .hero-content {
-                width: calc(100% - 28px);
-            }
-
-            .hero-content h1 {
-                font-size: 43px;
-                line-height: 1.02;
-            }
-
-            .hero-content p {
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .feature {
-                padding: 20px 8px;
-                justify-content: flex-start;
-            }
-
-            .feature-icon {
-                font-size: 23px;
-            }
-
-            .feature strong {
-                font-size: 12px;
-            }
-
-            .feature span {
-                font-size: 10px;
-            }
-
-            .section {
-                padding: 55px 0;
-            }
-
-            .section-header {
-                display: block;
-                margin-bottom: 22px;
-            }
-
-            .section-title h2 {
-                font-size: 31px;
-            }
-
-            .view-all {
-                display: inline-block;
-                margin-top: 12px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .product-image {
-                height: 180px;
-            }
-
-            .product-info {
-                padding: 12px;
-            }
-
-            .product-info h3 {
-                font-size: 14px;
-            }
-
-            .product-info p {
-                font-size: 11px;
-            }
-
-            .catalog {
-                padding: 50px 0;
-            }
-
-            .catalog-box {
-                min-height: 430px;
-                padding: 30px 22px;
-                align-items: flex-end;
-                background:
-                    linear-gradient(0deg, rgba(246,231,215,1) 0%, rgba(246,231,215,.88) 50%, rgba(246,231,215,.05) 100%),
-                    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85")
-                    center/cover;
-            }
-
-            .catalog-content h2 {
-                font-size: 34px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Toptan Sandalye | İmalathane Toptan Ahşap Sandalye ve Masa</title>
+
+<meta name="description" content="İmalathane üretim toptan ahşap sandalye, masa ve işletme mobilyaları. Cafe, restoran, otel ve işletmeler için toptan sandalye ve masa çözümleri.">
+
+<meta name="keywords" content="toptan sandalye, ahşap sandalye, toptan ahşap sandalye, imalathane sandalye, cafe sandalyesi, restoran sandalyesi, toptan masa, cafe masası, restoran masası">
+
+<style>
+
+:root{
+    --orange:#ff7100;
+    --orange-dark:#e85f00;
+    --black:#111111;
+    --dark:#1c1c1c;
+    --gray:#666;
+    --light:#f7f7f7;
+    --white:#ffffff;
+    --border:#e8e8e8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--black);
+    background:#fff;
+    padding-bottom:0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    height:78px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #eee;
+}
+
+.header-inner{
+    width:94%;
+    max-width:1450px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:36px;
+    height:36px;
+    background:var(--orange);
+    border-radius:6px;
+    position:relative;
+}
+
+.logo-icon:before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:14px;
+    border:4px solid white;
+    border-top:0;
+    left:8px;
+    top:8px;
+}
+
+.logo-icon:after{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:12px;
+    background:white;
+    left:6px;
+    bottom:2px;
+    box-shadow:19px 0 0 white;
+}
+
+.logo-text{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo-text span{
+    color:var(--orange);
+}
+
+.logo-sub{
+    display:block;
+    font-size:8px;
+    letter-spacing:2px;
+    color:#777;
+    margin-top:3px;
+    font-weight:bold;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.nav a{
+    transition:.2s;
+}
+
+.nav a:hover{
+    color:var(--orange);
+}
+
+.quote-btn{
+    background:var(--orange);
+    color:#fff;
+    padding:14px 25px;
+    border-radius:8px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.quote-btn:hover{
+    background:var(--orange-dark);
+}
+
+.mobile-menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:600px;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.60) 45%,rgba(0,0,0,.20) 100%),
+    url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2200&q=90");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    color:#fff;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:70px 0;
+}
+
+.hero-label{
+    display:inline-block;
+    background:var(--orange);
+    color:#fff;
+    padding:8px 13px;
+    font-size:17px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:14px;
+}
+
+.hero h1{
+    font-size:76px;
+    line-height:.98;
+    max-width:800px;
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero-description{
+    max-width:650px;
+    font-size:20px;
+    line-height:1.5;
+    margin-top:24px;
+    color:#f5f5f5;
+}
+
+.hero-features{
+    display:flex;
+    gap:32px;
+    margin-top:32px;
+    flex-wrap:wrap;
+}
+
+.hero-feature{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.feature-icon{
+    width:38px;
+    height:38px;
+    border:2px solid #fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:17px 27px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:800;
+    border:2px solid transparent;
+    cursor:pointer;
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:#fff;
+}
+
+.btn-orange:hover{
+    background:var(--orange-dark);
+}
+
+.btn-outline{
+    border-color:#fff;
+    color:#fff;
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:#111;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:60px 0;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:24px;
+}
+
+.section-title{
+    font-size:38px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+}
+
+.section-title span{
+    color:var(--orange);
+}
+
+.section-subtitle{
+    color:#666;
+    font-size:16px;
+    margin-top:5px;
+}
+
+.view-all{
+    color:var(--orange);
+    font-weight:800;
+    white-space:nowrap;
+}
+
+/* =========================
+   PRODUCT CATEGORIES
+========================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
+.product-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.product-image{
+    height:180px;
+    background:#f4f4f4;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-name{
+    padding:14px 12px;
+    font-size:14px;
+    font-weight:800;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.arrow{
+    color:var(--orange);
+    font-size:20px;
+}
+
+/* =========================
+   TABLE SECTION
+========================= */
+
+.tables-section{
+    background:#fff;
+}
+
+/* =========================
+   CATALOG
+========================= */
+
+.catalog-section{
+    background:#f6f6f6;
+    overflow:hidden;
+}
+
+.catalog-box{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    align-items:center;
+    gap:50px;
+}
+
+.catalog-content h2{
+    font-size:52px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.catalog-content h2 span{
+    color:var(--orange);
+}
+
+.catalog-description{
+    color:#666;
+    font-size:17px;
+    margin-bottom:28px;
+}
+
+.catalog-button{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--orange);
+    color:#fff;
+    padding:18px 28px;
+    border-radius:9px;
+    font-size:17px;
+    font-weight:900;
+}
+
+.catalog-features{
+    display:flex;
+    gap:35px;
+    margin-top:28px;
+    flex-wrap:wrap;
+}
+
+.catalog-feature{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.catalog-feature-icon{
+    font-size:24px;
+    color:var(--orange);
+}
+
+.catalog-image{
+    position:relative;
+    transform:rotate(-2deg);
+}
+
+.catalog-image img{
+    width:100%;
+    border-radius:4px;
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+/* =========================
+   REFERENCES
+========================= */
+
+.references-section{
+    background:#fff;
+}
+
+.references{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.reference{
+    height:80px;
+    border:1px solid #e5e5e5;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    font-size:21px;
+    font-weight:900;
+    color:#222;
+    text-align:center;
+}
+
+.reference:nth-child(2){
+    color:#e00000;
+}
+
+.reference:nth-child(3){
+    font-size:18px;
+}
+
+.reference:nth-child(4){
+    font-family:Georgia,serif;
+}
+
+.reference:nth-child(5){
+    color:#2071bd;
+}
+
+.reference:nth-child(6){
+    font-style:italic;
+}
+
+.reference:nth-child(7){
+    color:#1b6cb0;
+}
+
+.reference:nth-child(8){
+    color:#16833d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#111;
+    color:#fff;
+    padding:50px 0 100px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-size:28px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:var(--orange);
+}
+
+.footer-text{
+    color:#aaa;
+    line-height:1.7;
+    max-width:400px;
+    margin-top:15px;
+}
+
+.footer-title{
+    font-size:16px;
+    font-weight:800;
+    margin-bottom:16px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    color:#aaa;
+    font-size:14px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #333;
+    color:#777;
+    font-size:13px;
+}
+
+/* =========================
+   MOBILE FIXED BAR
+========================= */
+
+.mobile-fixed{
+    display:none;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-nav{
+    display:none;
+    position:fixed;
+    top:78px;
+    left:0;
+    right:0;
+    background:#fff;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.mobile-nav.active{
+    display:block;
+}
+
+.mobile-nav a{
+    display:block;
+    padding:17px 25px;
+    border-bottom:1px solid #eee;
+    font-weight:700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .products-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .references{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .nav{
+        gap:18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding-bottom:72px;
+    }
+
+    header{
+        height:68px;
+    }
+
+    .header-inner{
+        width:94%;
+    }
+
+    .logo-text{
+        font-size:20px;
+    }
+
+    .logo-sub{
+        font-size:6px;
+        letter-spacing:1.3px;
+    }
+
+    .logo-icon{
+        width:32px;
+        height:32px;
+    }
+
+    .nav,
+    header .quote-btn{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .hero{
+        min-height:590px;
+        background-position:center;
+        align-items:flex-end;
+    }
+
+    .hero-content{
+        width:90%;
+        padding:35px 0 50px;
+    }
+
+    .hero-label{
+        font-size:14px;
+        padding:7px 10px;
+    }
+
+    .hero h1{
+        font-size:47px;
+        line-height:1;
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:16px;
+        line-height:1.4;
+        margin-top:17px;
+    }
+
+    .hero-features{
+        gap:12px;
+        margin-top:22px;
+    }
+
+    .hero-feature{
+        width:calc(50% - 6px);
+        font-size:11px;
+    }
+
+    .feature-icon{
+        width:30px;
+        height:30px;
+        min-width:30px;
+        font-size:14px;
+    }
+
+    .hero-buttons{
+        gap:10px;
+        margin-top:24px;
+    }
+
+    .btn{
+        padding:14px 15px;
+        font-size:14px;
+        flex:1;
+    }
+
+    .section{
+        padding:40px 0;
+    }
+
+    .section-header{
+        align-items:flex-start;
+        flex-direction:column;
+        margin-bottom:18px;
+    }
+
+    .section-title{
+        font-size:31px;
+    }
+
+    .section-subtitle{
+        font-size:14px;
+    }
+
+    .view-all{
+        font-size:13px;
+    }
+
+    .products-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .product-image{
+        height:145px;
+    }
+
+    .product-name{
+        min-height:52px;
+        font-size:12px;
+        padding:10px;
+    }
+
+    .arrow{
+        font-size:16px;
+    }
+
+    .catalog-box{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .catalog-content h2{
+        font-size:38px;
+    }
+
+    .catalog-description{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .catalog-button{
+        width:100%;
+        justify-content:center;
+    }
+
+    .catalog-features{
+        gap:18px;
+    }
+
+    .catalog-feature{
+        font-size:12px;
+    }
+
+    .catalog-image{
+        max-width:85%;
+        margin:auto;
+    }
+
+    .references{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .reference{
+        height:68px;
+        font-size:16px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    footer{
+        padding-bottom:100px;
+    }
+
+    .mobile-fixed{
+        display:flex;
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index:2000;
+        background:#fff;
+        padding:8px;
+        gap:7px;
+        box-shadow:0 -5px 20px rgba(0,0,0,.15);
+    }
+
+    .mobile-fixed a{
+        flex:1;
+        height:54px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:8px;
+        border-radius:8px;
+        color:#fff;
+        font-size:14px;
+        font-weight:900;
+    }
+
+    .whatsapp{
+        background:#16c765;
+    }
+
+    .catalog-mobile{
+        background:var(--orange);
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:420px){
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:41px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-feature{
+        font-size:10px;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-image{
+        height:125px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-icon{
+    font-size:21px;
+}
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+.scroll-top{
+    position:fixed;
+    right:20px;
+    bottom:25px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--orange);
+    color:#fff;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:1900;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+    .scroll-top{
+        display:none!important;
+    }
+}
+
+</style>
 </head>
 
 <body>
@@ -663,317 +936,373 @@
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <a href="#" class="logo">
-            <div class="logo-icon"></div>
+<a href="#anasayfa" class="logo">
 
-            <div>
-                <span>Toptan</span>Sandalye
-                <small>TOPTAN SANDALYE ÇÖZÜMLERİ</small>
-            </div>
-        </a>
+<div class="logo-icon"></div>
 
-        <nav>
-            <a href="#">Ana Sayfa</a>
-            <a href="#sandalyeler">Sandalyeler</a>
-            <a href="#masalar">Masalar</a>
-            <a href="#katalog">Katalog</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
+<div>
+<div class="logo-text">
+<span>Toptan</span>Sandalye
+</div>
 
-        <a href="#iletisim" class="header-button">
-            Teklif Al
-        </a>
+<div class="logo-sub">
+TOPTAN SANDALYE ÇÖZÜMLERİ
+</div>
+</div>
 
-        <div class="mobile-menu">
-            ☰
-        </div>
+</a>
 
-    </div>
+<nav class="nav">
+
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#sandalyeler">Sandalyeler</a>
+<a href="#masalar">Masalar</a>
+<a href="#katalog">Katalog</a>
+<a href="#referanslar">Referanslar</a>
+<a href="#iletisim">İletişim</a>
+
+</nav>
+
+<a href="#iletisim" class="quote-btn">
+Teklif Al →
+</a>
+
+<div class="mobile-menu" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
 
 </header>
+
+
+<!-- =========================
+     MOBILE NAV
+========================= -->
+
+<div class="mobile-nav" id="mobileNav">
+
+<a href="#anasayfa" onclick="toggleMenu()">Ana Sayfa</a>
+<a href="#sandalyeler" onclick="toggleMenu()">Sandalyeler</a>
+<a href="#masalar" onclick="toggleMenu()">Masalar</a>
+<a href="#katalog" onclick="toggleMenu()">Katalog</a>
+<a href="#referanslar" onclick="toggleMenu()">Referanslar</a>
+<a href="#iletisim" onclick="toggleMenu()">İletişim</a>
+
+</div>
 
 
 <!-- =========================
      HERO
 ========================= -->
 
-<section class="hero">
+<section class="hero" id="anasayfa">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h1>
-            İşletmeler için
-            <span>Toptan Sandalye</span>
-            ve Masa Çözümleri
-        </h1>
+<div class="hero-label">
+İMALATHANE
+</div>
 
-        <p>
-            Cafe, restaurant, otel, ofis ve tüm işletmeler için
-            modern, dayanıklı ve şık sandalye ve masa modelleri.
-        </p>
+<h1>
+Toptan<br>
+<span>Ahşap Sandalye</span>
+</h1>
 
-        <div class="hero-buttons">
+<p class="hero-description">
+Cafe, restoran, otel, ofis ve tüm işletmeler için
+modern, dayanıklı ve şık ahşap sandalye çözümleri.
+</p>
 
-            <a href="#sandalyeler" class="btn btn-orange">
-                Ürünleri İncele →
-            </a>
+<div class="hero-features">
 
-            <a href="#katalog" class="btn btn-outline">
-                ↓ &nbsp; Katalog İndir
-            </a>
+<div class="hero-feature">
+<div class="feature-icon">⚙</div>
+<div>
+Kendi<br>İmalatımız
+</div>
+</div>
 
-        </div>
+<div class="hero-feature">
+<div class="feature-icon">🚚</div>
+<div>
+Tüm Türkiye'ye<br>Sevkiyat
+</div>
+</div>
 
-    </div>
+<div class="hero-feature">
+<div class="feature-icon">✓</div>
+<div>
+Toptan Alım<br>Avantajı
+</div>
+</div>
 
-</section>
+<div class="hero-feature">
+<div class="feature-icon">♧</div>
+<div>
+Doğal Ahşap<br>Uzun Ömür
+</div>
+</div>
 
+</div>
 
-<!-- =========================
-     FEATURES
-========================= -->
+<div class="hero-buttons">
 
-<section class="features">
+<a href="#sandalyeler" class="btn btn-orange">
+Ürünleri İncele →
+</a>
 
-    <div class="container features-grid">
+<a href="katalog.pdf" target="_blank" class="btn btn-outline">
+↓ &nbsp; Katalog İndir
+</a>
 
-        <div class="feature">
-            <div class="feature-icon">🚚</div>
-            <div>
-                <strong>Tüm Türkiye'ye</strong>
-                <span>Hızlı teslimat</span>
-            </div>
-        </div>
+</div>
 
-        <div class="feature">
-            <div class="feature-icon">✦</div>
-            <div>
-                <strong>Toptan Fiyat</strong>
-                <span>Avantajı</span>
-            </div>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">✓</div>
-            <div>
-                <strong>Güvenilir</strong>
-                <span>Alışveriş</span>
-            </div>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">☎</div>
-            <div>
-                <strong>Profesyonel</strong>
-                <span>Destek</span>
-            </div>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     SANDALYELER
+     SANDALYE ÇEŞİTLERİ
 ========================= -->
 
 <section class="section" id="sandalyeler">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-title">
+<div>
 
-                <small>EN ÇOK TERCİH EDİLEN</small>
+<h2 class="section-title">
+Sandalye <span>Çeşitleri</span>
+</h2>
 
-                <h2>Sandalyeler</h2>
+<p class="section-subtitle">
+Her mekana uygun, geniş ürün yelpazesi
+</p>
 
-                <p>
-                    Her mekâna uygun, modern ve dayanıklı sandalye modelleri.
-                </p>
+</div>
 
-            </div>
+<a href="#sandalyeler" class="view-all">
+Tüm Sandalyeleri Gör →
+</a>
 
-            <a href="#" class="view-all">
-                Tüm Sandalyeler Gör →
-            </a>
-
-        </div>
-
-
-        <div class="products-grid">
-
-            <a href="#" class="product">
-
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80"
-                        alt="Ahşap Sandalye">
-                </div>
-
-                <div class="product-info">
-                    <h3>Ahşap Sandalyeler</h3>
-                    <p>Doğal ve şık tasarımlar</p>
-                </div>
-
-            </a>
+</div>
 
 
-            <a href="#" class="product">
+<div class="products-grid">
 
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=800&q=80"
-                        alt="Metal Sandalye">
-                </div>
+<div class="product-card">
 
-                <div class="product-info">
-                    <h3>Metal Sandalyeler</h3>
-                    <p>Dayanıklı ve modern</p>
-                </div>
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=600&q=85" alt="Ahşap Sandalyeler">
+</div>
 
-            </a>
+<div class="product-name">
+Ahşap Sandalyeler
+<span class="arrow">→</span>
+</div>
 
-
-            <a href="#" class="product">
-
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?auto=format&fit=crop&w=800&q=80"
-                        alt="Cafe Sandalyesi">
-                </div>
-
-                <div class="product-info">
-                    <h3>Cafe Sandalyeleri</h3>
-                    <p>Rahat ve estetik</p>
-                </div>
-
-            </a>
+</div>
 
 
-            <a href="#" class="product">
+<div class="product-card">
 
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80"
-                        alt="Restaurant Sandalyesi">
-                </div>
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?auto=format&fit=crop&w=600&q=85" alt="Döşemeli Sandalyeler">
+</div>
 
-                <div class="product-info">
-                    <h3>Restaurant Sandalyeleri</h3>
-                    <p>Şıklık ve konfor bir arada</p>
-                </div>
+<div class="product-name">
+Döşemeli Sandalyeler
+<span class="arrow">→</span>
+</div>
 
-            </a>
+</div>
 
-        </div>
 
-    </div>
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=600&q=85" alt="Metal Sandalyeler">
+</div>
+
+<div class="product-name">
+Metal Sandalyeler
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=85" alt="Bahçe Sandalyeleri">
+</div>
+
+<div class="product-name">
+Bahçe Sandalyeleri
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=85" alt="Bar Sandalyeleri">
+</div>
+
+<div class="product-name">
+Bar Sandalyeleri
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=85" alt="Banket Sandalyeleri">
+</div>
+
+<div class="product-name">
+Banket Sandalyeleri
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- =========================
-     MASALAR
+     MASA ÇEŞİTLERİ
 ========================= -->
 
 <section class="section tables-section" id="masalar">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-title">
+<div>
 
-                <small>ŞIK VE DAYANIKLI</small>
+<h2 class="section-title">
+Masa <span>Çeşitleri</span>
+</h2>
 
-                <h2>Masalar</h2>
+<p class="section-subtitle">
+Cafe, restoran ve işletmeniz için ideal masa modelleri
+</p>
 
-                <p>
-                    İşletmenize uygun masa modelleri ile mekânlarınızı tamamlayın.
-                </p>
+</div>
 
-            </div>
+<a href="#masalar" class="view-all">
+Tüm Masaları Gör →
+</a>
 
-            <a href="#" class="view-all">
-                Tüm Masalar Gör →
-            </a>
-
-        </div>
-
-
-        <div class="products-grid">
-
-            <a href="#" class="product">
-
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
-                        alt="Cafe Masaları">
-                </div>
-
-                <div class="product-info">
-                    <h3>Cafe Masaları</h3>
-                    <p>Fonksiyonel ve şık</p>
-                </div>
-
-            </a>
+</div>
 
 
-            <a href="#" class="product">
+<div class="products-grid">
 
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80"
-                        alt="Restaurant Masaları">
-                </div>
+<div class="product-card">
 
-                <div class="product-info">
-                    <h3>Restaurant Masaları</h3>
-                    <p>Modern ve sağlam</p>
-                </div>
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=85" alt="Ahşap Masalar">
+</div>
 
-            </a>
+<div class="product-name">
+Ahşap Masalar
+<span class="arrow">→</span>
+</div>
 
-
-            <a href="#" class="product">
-
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
-                        alt="Ahşap Masalar">
-                </div>
-
-                <div class="product-info">
-                    <h3>Ahşap Masalar</h3>
-                    <p>Doğallık ve kalite</p>
-                </div>
-
-            </a>
+</div>
 
 
-            <a href="#" class="product">
+<div class="product-card">
 
-                <div class="product-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
-                        alt="Metal Masalar">
-                </div>
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=85" alt="Metal Masalar">
+</div>
 
-                <div class="product-info">
-                    <h3>Metal Masalar</h3>
-                    <p>Uzun ömürlü kullanım</p>
-                </div>
+<div class="product-name">
+Metal Masalar
+<span class="arrow">→</span>
+</div>
 
-            </a>
+</div>
 
-        </div>
 
-    </div>
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=85" alt="Cafe Masaları">
+</div>
+
+<div class="product-name">
+Cafe Masaları
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=85" alt="Restaurant Masaları">
+</div>
+
+<div class="product-name">
+Restaurant Masaları
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=600&q=85" alt="Bahçe Masaları">
+</div>
+
+<div class="product-name">
+Bahçe Masaları
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=600&q=85" alt="Katlanır Masalar">
+</div>
+
+<div class="product-name">
+Katlanır Masalar
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -982,35 +1311,135 @@
      KATALOG
 ========================= -->
 
-<section class="catalog" id="katalog">
+<section class="section catalog-section" id="katalog">
 
-    <div class="container">
+<div class="container">
 
-        <div class="catalog-box">
+<div class="catalog-box">
 
-            <div class="catalog-content">
+<div class="catalog-content">
 
-                <small>TÜM ÜRÜNLERİMİZ TEK KATALOGDA</small>
+<h2>
+<span>Katalog</span>
+</h2>
 
-                <h2>
-                    Tüm Ürünlerimiz
-                    Kataloğumuzda
-                </h2>
+<p class="catalog-description">
+Tüm ürünlerimizi inceleyin, işletmeniz için en uygun
+çözümleri keşfedin.
+</p>
 
-                <p>
-                    Sandalye ve masa modellerimizi detaylı olarak
-                    incelemek için ürün kataloğumuzu indirebilirsiniz.
-                </p>
+<a href="katalog.pdf" target="_blank" class="catalog-button">
+↓ &nbsp; Katalog İndir (PDF)
+</a>
 
-                <a href="katalog.pdf" class="btn btn-orange" download>
-                    ↓ &nbsp; Kataloğu İndir
-                </a>
+<div class="catalog-features">
 
-            </div>
+<div class="catalog-feature">
+<div class="catalog-feature-icon">▣</div>
+Güncel Ürünler
+</div>
 
-        </div>
+<div class="catalog-feature">
+<div class="catalog-feature-icon">▤</div>
+Detaylı Bilgiler
+</div>
 
-    </div>
+<div class="catalog-feature">
+<div class="catalog-feature-icon">◇</div>
+Toptan Fiyatlar
+</div>
+
+</div>
+
+</div>
+
+<div class="catalog-image">
+
+<img src="https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=900&q=90" alt="Toptan Sandalye Kataloğu">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REFERANSLAR
+========================= -->
+
+<section class="section references-section" id="referanslar">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+Referans<span>larımız</span>
+</h2>
+
+<p class="section-subtitle">
+Türkiye'nin dört bir yanında bizi tercih eden işletmeler
+</p>
+
+</div>
+
+<a href="#referanslar" class="view-all">
+Tüm Referanslar Gör →
+</a>
+
+</div>
+
+
+<div class="references">
+
+<div class="reference">
+MADO
+</div>
+
+<div class="reference">
+Simit Sarayı
+</div>
+
+<div class="reference">
+BIGCHEFS
+</div>
+
+<div class="reference">
+divan
+</div>
+
+<div class="reference">
+WYNDHAM
+</div>
+
+<div class="reference">
+Radisson
+</div>
+
+<div class="reference">
+Hilton
+</div>
+
+<div class="reference">
+STARBUCKS
+</div>
+
+<div class="reference">
+THE RITZ-CARLTON
+</div>
+
+<div class="reference">
++ Daha Fazlası
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1021,73 +1450,140 @@
 
 <footer id="iletisim">
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-grid">
+<div class="footer-grid">
 
-            <div>
+<div>
 
-                <div class="footer-logo">
-                    <span>Toptan</span>Sandalye
-                </div>
+<div class="footer-logo">
+<span>Toptan</span>Sandalye
+</div>
 
-                <p class="footer-description">
-                    Cafe, restaurant, otel, düğün salonu ve işletmeler
-                    için toptan sandalye ve masa çözümleri.
-                </p>
+<p class="footer-text">
+İmalathane üretim gücümüzle cafe, restoran,
+otel ve işletmeler için toptan sandalye ve masa
+çözümleri sunuyoruz.
+</p>
 
-            </div>
-
-
-            <div>
-
-                <h3>Hızlı Linkler</h3>
-
-                <div class="footer-links">
-                    <a href="#">Ana Sayfa</a>
-                    <a href="#sandalyeler">Sandalyeler</a>
-                    <a href="#masalar">Masalar</a>
-                    <a href="#katalog">Katalog</a>
-                    <a href="#iletisim">İletişim</a>
-                </div>
-
-            </div>
+</div>
 
 
-            <div>
+<div>
 
-                <h3>İletişim</h3>
+<div class="footer-title">
+Ürünler
+</div>
 
-                <div class="footer-links">
-                    <a href="tel:+902125551234">☎ +90 212 555 12 34</a>
-                    <a href="mailto:info@toptansandalye.com">
-                        ✉ info@toptansandalye.com
-                    </a>
-                    <a href="#">
-                        📍 İstanbul, Türkiye
-                    </a>
-                </div>
+<div class="footer-links">
 
-            </div>
+<a href="#sandalyeler">Sandalyeler</a>
+<a href="#masalar">Masalar</a>
+<a href="#katalog">Katalog</a>
 
-        </div>
+</div>
+
+</div>
 
 
-        <div class="footer-bottom">
+<div>
 
-            <span>
-                © 2026 toptansandalye.com
-            </span>
+<div class="footer-title">
+Kurumsal
+</div>
 
-            <span>
-                Tüm hakları saklıdır.
-            </span>
+<div class="footer-links">
 
-        </div>
+<a href="#referanslar">Referanslarımız</a>
+<a href="#iletisim">İletişim</a>
+<a href="#katalog">Ürün Kataloğu</a>
 
-    </div>
+</div>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+İletişim
+</div>
+
+<div class="footer-links">
+
+<a href="tel:+902125551234">
++90 212 555 12 34
+</a>
+
+<a href="mailto:info@toptansandalye.com">
+info@toptansandalye.com
+</a>
+
+<a href="#">
+İstanbul / Türkiye
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 ToptanSandalye. Tüm hakları saklıdır.
+
+</div>
+
+</div>
 
 </footer>
+
+
+<!-- =========================
+     MOBILE FIXED BUTTONS
+========================= -->
+
+<div class="mobile-fixed">
+
+<a
+href="https://wa.me/902125551234"
+target="_blank"
+class="whatsapp"
+>
+
+<span class="whatsapp-icon">◉</span>
+
+WhatsApp ile İletişime Geç
+
+</a>
+
+
+<a
+href="katalog.pdf"
+target="_blank"
+class="catalog-mobile"
+>
+
+↓ &nbsp; Katalog İndir
+
+</a>
+
+</div>
+
+
+<script>
+
+function toggleMenu(){
+
+    const menu = document.getElementById("mobileNav");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
